@@ -3,7 +3,10 @@ builder = "nixpacks"
 buildCommand = "npm run build"
 
 [deploy]
-startCommand = "npm start"
+startCommand = "NODE_ENV=production node dist/index.js"
 healthcheckPath = "/"
 healthcheckTimeout = 100
-restartPolicyType = "on_failure" 
+restartPolicyType = "on_failure"
+
+[nixpacks]
+nodejs_version = "18" 
